@@ -21,6 +21,7 @@ Uma conta e projeto criados no Supabase.
 2. Configurar o Banco de Dados (Supabase)
 No painel do Supabase, acesse o SQL Editor e execute o seguinte comando para criar a tabela:
 
+```text
 create table tasks (
   id uuid default gen_random_uuid() primary key,
   title text not null,
