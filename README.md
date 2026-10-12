@@ -12,18 +12,6 @@ Aplicação web minimalista de gerenciamento de tarefas desenvolvida para demons
 
 ---
 
-## 📂 Estrutura do Projeto
-
-text
-taskflow-app/
-│
-├── main.py          # Código do back-end (FastAPI + POO + Supabase)
-├── index.html       # Interface do usuário (Front-end)
-├── .gitignore       # Arquivos ignorados pelo Git
-└── README.md        # Documentação do projeto
-
----
-
 ⚙️ Como Executar o Projeto Localmente
 1. Pré-requisitos
 Python instalado (versão 3.10 ou superior).
@@ -56,3 +44,16 @@ python -m uvicorn main:app --reload
 
 4. Executar o Front-end
 Dê um duplo clique no arquivo index.html para abri-lo diretamente no navegador
+
+---
+
+## 📂 Estrutura do Projeto
+
+```text
+taskflow-app/
+│
+├── main.py          # Código do back-end (FastAPI + POO + Supabase)
+├── index.html       # Interface do usuário (Front-end)
+├── .gitignore       # Arquivos ignorados pelo Git
+└── README.md        # Documentação do projeto
+
