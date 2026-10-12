@@ -14,10 +14,45 @@ Aplicação web minimalista de gerenciamento de tarefas desenvolvida para demons
 
 ## 📂 Estrutura do Projeto
 
-```text
+text
 taskflow-app/
 │
 ├── main.py          # Código do back-end (FastAPI + POO + Supabase)
 ├── index.html       # Interface do usuário (Front-end)
 ├── .gitignore       # Arquivos ignorados pelo Git
 └── README.md        # Documentação do projeto
+
+---
+
+⚙️ Como Executar o Projeto Localmente
+1. Pré-requisitos
+Python instalado (versão 3.10 ou superior).
+
+Uma conta e projeto criados no Supabase.
+
+2. Configurar o Banco de Dados (Supabase)
+No painel do Supabase, acesse o SQL Editor e execute o seguinte comando para criar a tabela:
+
+create table tasks (
+  id uuid default gen_random_uuid() primary key,
+  title text not null,
+  description text,
+  status text default 'Pendente',
+  created_at timestamp with time zone default timezone('utc'::text, now()) not null
+);
+
+alter table tasks disable row level security;
+
+---
+
+3. Rodar o Back-end (Python)
+Abra o terminal na pasta do projeto e instale as dependências:
+
+pip install fastapi uvicorn supabase pydantic
+
+-> Em seguida, certifique-se de que sua chave do Supabase (SUPABASE_KEY) está configurada corretamente no arquivo main.py e inicie o servidor:
+
+python -m uvicorn main:app --reload
+
+4. Executar o Front-end
+Dê um duplo clique no arquivo index.html para abri-lo diretamente no navegador
