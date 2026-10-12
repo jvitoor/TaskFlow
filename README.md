@@ -21,25 +21,12 @@ Uma conta e projeto criados no Supabase.
 2. Configurar o Banco de Dados (Supabase)
 No painel do Supabase, acesse o SQL Editor e execute o seguinte comando para criar a tabela:
 
-```text
-create table tasks (
-  id uuid default gen_random_uuid() primary key,
-  title text not null,
-  description text,
-  status text default 'Pendente',
-  created_at timestamp with time zone default timezone('utc'::text, now()) not null
-);
-
-alter table tasks disable row level security;
-
----
-
 3. Rodar o Back-end (Python)
 Abra o terminal na pasta do projeto e instale as dependências:
 
 pip install fastapi uvicorn supabase pydantic
 
--> Em seguida, certifique-se de que sua chave do Supabase (SUPABASE_KEY) está configurada corretamente no arquivo main.py e inicie o servidor:
+-> Em seguida, certifique-se de que a chave do Supabase (SUPABASE_KEY) está configurada corretamente no arquivo main.py e inicie o servidor:
 
 python -m uvicorn main:app --reload
 
